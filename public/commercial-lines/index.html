@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Elevate Onboarding</title>
+    <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/signature-pad.css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39365077-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="signature-pad" class="signature-pad">
+      <div id="scroller">
+        <p>
+        <h3 class="text-center">Private1 & Confidential </h3>
+        <div class="text-center">    <img  src="TsogaLogo.jpeg" /> </div>
+    
+        <br>
+        <h4 class="text-center">Intermediary Appointment: Commercial Lines</h4>
+      <br>
+<p>
+
+  <ol>
+    <li>I, the undersigned, appoint Tsoga Afrika Insure Brokers (Pty) Ltd, hereinafter referred to as Tsoga, as our non-mandated intermediary. <br>
+      This means that Tsoga is appointed as my short-term insurance broker in order to:     
+
+    <ul>
+    <li>a. secure quotations on my behalf from a range of Insurers</li>  
+    <li>b. arrange for insurance cover on my behalf after I accept a quotation</li>
+    <li>c. process any claims on my behalf with my Insurer</li>
+    <li>d. renew my Insurance cover as and when necessary and only after securing my agreement to do so</li>
+    <li>e. amend my Insurance cover from time to time as per my request</li>
+    <li>f. provide me with guidance regarding matters of a short-term insurance nature</li>
+    <li>g. deal with queries that I may have regarding my Insurance cover</li>
+    </ul>
+  </li>
+  <br>
+  <li>In order to fulfill these responsibilities, I authorise Tsoga to obtain, on my behalf and at my request, all relevant information pertaining to my existing insurance cover for all personal business, including:
+    <ul>
+      <li>a. policy wordings</li>  
+      <li>b. policy schedules</li>
+      <li>c. endorsements</li>
+      <li>d. detailed claims experience</li>
+      </ul>
+  </li>
+  <br>
+  <li>I take note of the following:
+    <ul>
+      <li>a. that Tsoga Africa Insurance Brokers (Pty) Ltd (Tsoga) is a registered Financial Services Provider under licence number 49909 and company registration number 2017/510564/07</li>  
+      <li>b. that Tsoga does not collect or handle Insurance premiums; these are paid directly by the client to the Insurer</li>
+      <li>c. that, as required by law, Tsoga has Professional Indemnity / Fidelity Guarantee Insurance in place</li>
+      </ul>
+  </li>
+  <br>
+  <li>Client Confirmation:
+  </li>
+
+   
+</p>
+
+
+<form id="form" onsubmit="mySubmitFunction()">
+<div class="row">
+  <div class="col">
+    <label><b>EFFECTIVE DATE OF APPOINTMENT:</b></label>
+    <input id ="type" name  ="type" type="text" value="c" hidden>
+    <input type="date" class="form-control" id="effective_date_appointment" name ="effective_date_appointment" placeholder="Effective Date">
+  </div> 
+</div>
+ 
+<br>
+<div class="row">
+  <div class="col">
+    <label>NAME OF STOKFELA:</label>
+    <input id ="name_of_stokfela" name  ="name_of_stokfela" type="text" class="form-control" placeholder="Name Of Stokfela">   
+   
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <label>NAME OF BUSINESS:</label>
+    <input id="name_of_business" name="name_of_business" type="text" class="form-control" placeholder="Enter Name of Business">
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col">
+    <label>REGISTRATION NUMBER:</label>
+    <input id="registration_number" name="registration_number" type="text" class="form-control" placeholder="Enter Registration No.">
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col">
+    <label>VAT NUMBER:</label>
+    <input id="vat_no" name="vat_no" type="text" class="form-control" placeholder="Enter VAT No.">
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col">
+    <label>CONTACT PERSON:</label>
+    <input id="contact_person" name="contact_person" type="text" class="form-control" placeholder="Enter Contact Person">
+  </div>
+</div>
+<br> 
+<div class="row">
+  <div class="col">
+    <label>NAME OF SIGNATORY:</label>
+    <input id="name_of_signatory" name="name_of_signatory" type="text" class="form-control" placeholder="Enter Name of Signatory">
+  </div>
+</div>
+  <br> 
+  <div class="row">
+    <div class="col">
+      <label>Contact Number:</label>
+      <input id="contact_number" name="contact_number" type="text" class="form-control" placeholder="Enter Contact Number">
+    </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <label>DATE:</label>
+    <input id="date" name="date" type="date" class="form-control" placeholder="Enter Date">
+  </div>
+</div>
+<br>
+<br> 
+<div class="description"><b>SIGNATURE:</b></div>
+      
+            <br>
+      </div>
+      <div class="signature-pad--body">
+        <canvas></canvas>
+      </div>
+      <div class="signature-pad--footer">
+        <div class="description">Sign above</div>
+        <div class="signature-pad--actions">
+          <div>
+            <button type="button" class="btn btn-primary btn-lg button clear" data-action="clear">Clear</button>         
+            <button type="button" class="btn btn-primary btn-lg button save" data-action="save-png">Submit Form</button>
+                     </div>
+        </div>
+      </div>
+        </div>
+     
+    <script src="js/signature_pad.umd.js"></script>
+    <script src="js/xhr.js"></script>
+    <script src="js/app.js"></script>
+ 
+  </body>
+</html>

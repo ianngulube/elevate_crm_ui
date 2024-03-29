@@ -1,0 +1,42 @@
+@extends('layouts.elevate')
+@section('content')
+
+<!--Start Dashboard Content-->
+
+<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+                        <div class="container-xl px-4">
+                            <div class="page-header-content pt-4">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto mt-4">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon"><i data-feather="users"></i></div>
+                                            Create Task
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- Main page content-->
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Create Task </h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('admin.member-tasks.store') }}">
+                            @include('admin.member-tasks.partials.form',['create'=>true])
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@endsection
