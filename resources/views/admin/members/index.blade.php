@@ -111,7 +111,7 @@
                     <th scope="col">Surname</th>
                     <th scope="col">Group Name</th>
                     <th scope="col">Contact</th>
-
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -124,7 +124,7 @@
                         <td>{{ $m->surname }}</td>
                         <td>{{ $m->website }}</td>
                         <td>{{ $m->home_number }}</td>
-
+                        <td>{{ $m->status }}</td>
                         <td>
                             <div class="btn-group">
                                 <a class="zmdi zmdi-account btn btn-md btn-primary text-white" href="{{ route('admin.members.show', $m->id) }}"
