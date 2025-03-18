@@ -30,35 +30,35 @@
     <br>
   <div class="row">
                             <div class="col-lg-6 col-xl-3 mb-4">
-                                <div class="card bg-primary text-white h-100">
+                                <div class="card bg-success text-white h-100">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="me-3">
-                                                <div class="text-white-75 md">Total Deactivated</div>
-                                                <div class="text-lg fw-bold">{{ $totalMembersDeactivated }}</div>
+                                                <div class="text-white-75 md">Active</div>
+                                                <div class="text-lg fw-bold">{{ $totalMembersActive }} </div>
                                             </div>
-                                            <i class="feather-xl text-white-50" data-feather="user-check"></i>
+                                            <i class="feather-xl text-primary-50" data-feather="user-check"></i>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between small">
-                                        <a class="text-white stretched-link" href="#!">Members</a>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                         <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-3 mb-4">
-                                <div class="card bg-success text-white h-100">
+                                <div class="card bg-secondary text-white h-100">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="me-3">
-                                                <div class="text-white-75 md">Total  Active</div>
-                                                <div class="text-lg fw-bold">{{ $totalMembersActive }}</div>
+                                                <div class="text-white-75 md">Pending</div>
+                                                <div class="text-lg fw-bold">{{ $totalMembersPending }} </div>
                                             </div>
-                                            <i class="feather-xl text-white-50" data-feather="user-plus"></i>
+                                            <i class="feather-xl text-warning-50" data-feather="user-plus"></i>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between small">
-                                        <a class="text-white stretched-link" href="#!">Members</a>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                         <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -68,14 +68,14 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="me-3">
-                                                <div class="text-white-75 md">Total  Pending</div>
-                                                <div class="text-lg fw-bold">{{ $totalMembersPending }}</div>
+                                                <div class="text-white-75 md">Suspended</div>
+                                                <div class="text-lg fw-bold">{{ $totalMembersSuspended }} </div>
                                             </div>
-                                            <i class="feather-xl text-white-50" data-feather="user-minus"></i>
+                                            <i class="feather-xl text-warning-50" data-feather="user-minus"></i>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between small">
-                                        <a class="text-white stretched-link" href="#!">Members</a>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                         <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -85,14 +85,14 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="me-3">
-                                                <div class="text-white-75 md">Total Suspended</div>
-                                                <div class="text-lg fw-bold">{{ $totalMembersSuspended }}</div>
+                                                <div class="text-white-75 md">Deactivated</div>
+                                                <div class="text-lg fw-bold">{{ $totalMembersDeactivated }} </div>
                                             </div>
-                                            <i class="feather-xl text-white-50" data-feather="user-x"></i>
+                                            <i class="feather-xl text-warning-50" data-feather="user-x"></i>
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between small">
-                                        <a class="text-white stretched-link" href="#!">Members</a>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                         <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -106,9 +106,10 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Mem No.</th>
+                    <th scope="col">Ref No.</th>
                     <th scope="col">Firstname</th>
                     <th scope="col">Surname</th>
+                    <th scope="col">DOB</th>
                     <th scope="col">Group Name</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Status</th>
@@ -122,6 +123,7 @@
                         <td scope="row">{{  $m->membership_number}}</td>
                         <td>{{ $m->firstname }}</td>
                         <td>{{ $m->surname }}</td>
+                        <td>{{ $m->dob }}</td>
                         <td>{{ $m->website }}</td>
                         <td>{{ $m->home_number }}</td>
                         <td>{{ $m->status }}</td>
@@ -129,8 +131,10 @@
                             <div class="btn-group">
                                 <a class="zmdi zmdi-account btn btn-md btn-primary text-white" href="{{ route('admin.members.show', $m->id) }}"
                                     role="button">View</a>
-                                <a class="zmdi zmdi-edit btn btn-md btn-info text-dark " href="{{ route('admin.members.edit', $m->id) }}"
+   <!--
+                                <a class="zmdi zmdi-edit btn btn-md btn-primary text-white " href="{{ route('admin.members.edit', $m->id) }}"
                                     role="button">Edit</a>
+                                 
                                 <button type="button" class="btn btn-sm btn-danger text-white" onclick="event.preventDefault();
                  if (confirm('Are you sure you want to delete  this record from the system? Click  OK to  confirm or  cancel if you want to cancel delete  action.  to , NB This  is  not reversable.')) {
           // Save it!
@@ -141,6 +145,7 @@
         }">
                                     Delete
                                 </button>
+                                -->
                             </div>
                              <!-- Main page content-->
                             <form id="delete-form-{{ $m->id }}"
@@ -160,4 +165,4 @@
 </div>
 
 
-    @endsection
+@endsection
